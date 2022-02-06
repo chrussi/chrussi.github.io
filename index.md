@@ -1,9 +1,9 @@
 ---
-title: About Alembic
+title: Carlos Henrique Russi
 feature_text: |
-  ## Alembic
-  A Jekyll boilerplate theme designed to be a starting point for any Jekyll website
-feature_image: "https://picsum.photos/1300/400?image=989"
+  ## Carlos Henrique Russi
+  Criei esse site para compartilhar um pouco sobre o que venho fazendo da vida e minha opinião sobre temas específicos, em especial sobre biologia
+feature_image: "floresta.jpg"
 excerpt: "Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get the ball rolling immediately. Install it, configure it, tweak it, push it."
 ---
 
