@@ -4,5 +4,5 @@ Criei este espaço para compartilhar com vocês um pouco sobre o que tenho feito
 
 ALERTA: Não sei quase nada sobre programação, então este ambiente pode ser bastante caótico!
 
-<img src="eu.jpg"/>
+![eu](images/eu.jpg)
 
