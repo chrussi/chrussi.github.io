@@ -43,7 +43,7 @@ nav ul li a {
   background-image: url('{{ '/assets/images/paisagem2.jpg' | relative_url }}');
   background-size: cover;
   background-position: center;
-  margin-top: 08px; /* Para não sobrepor a barra superior */
+  margin-top: -20px; /* Para não sobrepor a barra superior */
 }
 
 /* Seção de perfil */
@@ -52,8 +52,7 @@ nav ul li a {
   padding: 30px;
   background-color: rgba(192, 206, 208, 0.5); /* Cinza translúcido */
   margin-top: -50px; /* Subindo para sobrepor à foto */
-  position: relative;
-  z-index: 5; /* Para garantir que fique sobre a imagem */
+  position: relative
 }
 
 .profile-photo {
