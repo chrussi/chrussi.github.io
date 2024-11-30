@@ -8,7 +8,7 @@ body {
 
 /* Barra superior */
 header {
-  background-color: #b0b0b0; /* Cinza mais claro */
+  background-color: #c1ced0; /* Cinza mais claro */
   padding: 15px 0;
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,7 @@ nav ul li a {
 /* Espaço para a foto de paisagem */
 .landscape-image {
   width: 100%;
-  height: 400px;
+  height: 500px;
   background-image: url('/assets/images/paisagem.JPG'); /* Caminho direto da imagem */
   background-size: cover;
   background-position: center;
