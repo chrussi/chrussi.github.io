@@ -8,7 +8,7 @@ body {
 
 /* Barra superior */
 header {
-  background-color: #c1ced0; /* Cinza médio */
+  background-color: #c1ced0; /* Novo cinza claro */
   padding: 15px 0;
   display: flex;
   justify-content: space-between;
@@ -40,32 +40,20 @@ nav ul li a {
 .landscape-image {
   width: 100%;
   height: 400px;
-  background-image: url("{{ '/assets/images/paisagem2.jpg' | relative_url }}");
+  background-image: url('{{ '/assets/images/paisagem2.jpg' | relative_url }}');
   background-size: cover;
   background-position: center;
   margin-top: 80px; /* Para não sobrepor a barra superior */
-  position: relative;
-}
-
-/* Retângulo cinza com transparência entre a foto de paisagem e a seção de perfil */
-.overlay {
-  position: absolute;
-  top: 300px; /* Ajuste para alinhar o retângulo abaixo da foto */
-  width: 100%;
-  height: 100px; /* Altura do retângulo */
-  background-color: rgba(128, 128, 128, 0.5); /* Cinza com 50% de opacidade */
-  z-index: 2;
 }
 
 /* Seção de perfil */
 .profile-section {
   text-align: center;
   padding: 30px;
-  position: absolute;
-  top: 50%; /* Alinha a seção de perfil verticalmente */
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
-  z-index: 3;
+  background-color: rgba(192, 206, 208, 0.5); /* Cinza translúcido */
+  margin-top: -50px; /* Subindo para sobrepor à foto */
+  position: relative;
+  z-index: 5; /* Para garantir que fique sobre a imagem */
 }
 
 .profile-photo {
@@ -73,7 +61,6 @@ nav ul li a {
   height: 150px;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 5px solid white; /* Borda branca para destacar a foto */
 }
 
 .name {
