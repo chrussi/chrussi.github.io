@@ -1,42 +1,27 @@
-<section>
-
-  <h3 id="about-me">About Myself</h3>
-
-  <div class="face-lockup">
-
-    <div class="face-img"></div>
-
-    <div class="icon-pencil">{% include icons/icon-pencil.html %}</div>
-    <div class="icon-mouse">{% include icons/icon-mouse.html %}</div>
-    <div class="icon-browser">{% include icons/icon-browser.html %}</div>
-    <div class="icon-video">{% include icons/icon-video.html %}</div>
-
-  </div>
-
-
-  <div class="blurb">
-    {{ site.data.settings.blurb | markdownify }}
-  </div>
-
-  {% if site.data.settings.skills %}
-
-  <div class="skill-lockup">
-
-    {% for skill in site.data.settings.skills %}
-
-      <div class="skill-unit">
-        <div class="skill-label">{{ skill.name }}</div>
-        <div class="skill-icons skill-{{ skill.value }}">
-          {% for i in (1..10) %}
-            <span></span>
-          {% endfor %}
-        </div>
+<!-- About Section -->
+<section class="success" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>About</h2>
+        <hr class="star-light">
       </div>
-
-    {% endfor %}
-
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+        <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete
+          source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy
+          customization.</p>
+      </div>
+      <div class="col-lg-4">
+        <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or
+          a graphic artist looking to share your projects, this template is the perfect starting point! </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <a href="https://github.com/jeromelachaud/freelancer-theme" class="btn btn-lg btn-outline">
+          <i class="fa fa-download"></i> Download Theme
+        </a>
+      </div>
+    </div>
   </div>
-
-  {% endif %}
-
 </section>
