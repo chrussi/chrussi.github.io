@@ -8,7 +8,7 @@ body {
 
 /* Barra superior */
 header {
-  background-color: #6c757d; /* Cinza médio */
+  background-color: #c1ced0; /* Azul */
   padding: 25px 0;
   display: flex;
   justify-content: space-between;
@@ -40,7 +40,7 @@ nav ul li a {
 .landscape-image {
   width: 100%;
   height: 500px;
-  background-image: url('{{ '/assets/images/paisagem.JPG' | relative_url }}');
+  background-image: url('/assets/images/paisagem.JPG' | relative_url');
   background-size: cover;
   background-position: center;
   margin-top: 80px; /* Para não sobrepor a barra superior */
@@ -52,9 +52,9 @@ nav ul li a {
 .overlay {
   position: absolute;
   top: 380px; /* Ajuste para alinhar o retângulo abaixo da foto */
-  width: 100%;
-  height: 100px; /* Altura do retângulo */
-  background-color: rgba(128, 128, 128, 0.5); /* Cinza com 50% de opacidade */
+  width: 40%;
+  height: 200px; /* Altura do retângulo */
+  background-color: #c1ced0; /* Azul*/
   z-index: 2;
 }
 
