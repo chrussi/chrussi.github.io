@@ -51,7 +51,7 @@ nav ul li a {
   text-align: center;
   padding: 30px;
   background-color: rgba(192, 206, 208, 0.5); /* Cinza translúcido */
-  margin-top: -70px; /* Subindo para sobrepor à foto */
+  margin-top: 0px; /* Subindo para sobrepor à foto */
   position: relative
 }
 
