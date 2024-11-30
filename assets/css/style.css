@@ -40,10 +40,10 @@ nav ul li a {
 .landscape-image {
   width: 100%;
   height: 400px;
-  background-image: url('{{ '/assets/images/paisagem2.jpg' | relative_url }}');
+  background-image: url('/assets/images/paisagem2.jpg');
   background-size: cover;
   background-position: center;
-  margin-top: -20px; /* Para não sobrepor a barra superior */
+  margin-top: 10 px; /* Para não sobrepor a barra superior */
 }
 
 /* Seção de perfil */
