@@ -8,7 +8,7 @@ body {
 
 /* Barra superior */
 header {
-  background-color: rgba(174, 205, 226, 0.7); 
+  background-color: rgba(186, 201, 205, 0.5); 
   padding: 15px 0;
   display: flex;
   justify-content: space-between;
