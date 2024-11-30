@@ -43,19 +43,9 @@ nav ul li a {
   background-image: url('/assets/images/paisagem.JPG' | relative_url');
   background-size: cover;
   background-position: center;
-  margin-top: 80px; /* Para não sobrepor a barra superior */
+  margin-top: 50px; /* Para não sobrepor a barra superior */
   position: relative;
   z-index: 1; /* Para garantir que a imagem fique atrás */
-}
-
-/* Retângulo cinza com transparência entre a foto de paisagem e a seção de perfil */
-.overlay {
-  position: absolute;
-  top: 380px; /* Ajuste para alinhar o retângulo abaixo da foto */
-  width: 40%;
-  height: 200px; /* Altura do retângulo */
-  background-color: #c1ced0; /* Azul*/
-  z-index: 2;
 }
 
 /* Seção de perfil */
@@ -70,8 +60,8 @@ nav ul li a {
 }
 
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-bottom: 20px;
 }
