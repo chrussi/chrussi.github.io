@@ -51,7 +51,7 @@ nav ul li a {
   text-align: center;
   padding: 30px;
   background-color: rgba(192, 206, 208, 0.5); /* Cinza translúcido */
-  margin-top: -50px; /* Subindo para sobrepor à foto */
+  margin-top: -70px; /* Subindo para sobrepor à foto */
   position: relative
 }
 
@@ -65,10 +65,10 @@ nav ul li a {
 .name {
   font-size: 30px;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .skills {
   font-size: 18px;
-  color: #555555; /* Cinza escuro */
+  color: black; 
 }
