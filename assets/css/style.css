@@ -43,7 +43,7 @@ nav ul li a {
   background-image: url('{{ '/assets/images/paisagem2.jpg' | relative_url }}');
   background-size: cover;
   background-position: center;
-  margin-top: 80px; /* Para não sobrepor a barra superior */
+  margin-top: 08px; /* Para não sobrepor a barra superior */
 }
 
 /* Seção de perfil */
