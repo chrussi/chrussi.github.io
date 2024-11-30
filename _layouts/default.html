@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }} - Página Principal</title>
+  <title>{{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
@@ -22,12 +22,15 @@
   <!-- Imagem de paisagem -->
   <div class="landscape-image"></div>
 
+  <!-- Retângulo cinza com 50% de transparência -->
+  <div class="overlay"></div>
+
   <!-- Seção de perfil -->
   <div class="profile-section">
     <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Minha Foto" class="profile-photo">
-    <div class="name">Carlos Henrique Russi</div>
+    <div class="name">Seu Nome Completo</div>
     <div class="skills">
-      <p>Biólogo | Consultor Ambiental</p>
+      <p>Biólogo | Consultor Ambiental e Estatístico</p>
     </div>
   </div>
 

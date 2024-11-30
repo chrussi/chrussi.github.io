@@ -8,8 +8,8 @@ body {
 
 /* Barra superior */
 header {
-  background-color: #c1ced0; /* Cinza mais claro */
-  padding: 15px 0;
+  background-color: #6c757d; /* Cinza médio */
+  padding: 25px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,15 +26,6 @@ nav ul {
   display: flex;
 }
 
-nav ul.left {
-  flex: 1; /* Para garantir que "Home" fique à esquerda */
-}
-
-nav ul.right {
-  display: flex;
-  justify-content: flex-end; /* Alinha à direita */
-}
-
 nav ul li {
   margin: 0 20px;
 }
@@ -49,16 +40,33 @@ nav ul li a {
 .landscape-image {
   width: 100%;
   height: 500px;
-  background-image: url('/assets/images/paisagem.JPG'); /* Caminho direto da imagem */
+  background-image: url('{{ '/assets/images/paisagem.JPG' | relative_url }}');
   background-size: cover;
   background-position: center;
   margin-top: 80px; /* Para não sobrepor a barra superior */
+  position: relative;
+  z-index: 1; /* Para garantir que a imagem fique atrás */
+}
+
+/* Retângulo cinza com transparência entre a foto de paisagem e a seção de perfil */
+.overlay {
+  position: absolute;
+  top: 380px; /* Ajuste para alinhar o retângulo abaixo da foto */
+  width: 100%;
+  height: 100px; /* Altura do retângulo */
+  background-color: rgba(128, 128, 128, 0.5); /* Cinza com 50% de opacidade */
+  z-index: 2;
 }
 
 /* Seção de perfil */
 .profile-section {
   text-align: center;
   padding: 30px;
+  position: absolute;
+  top: 50%; /* Alinha a seção de perfil verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza horizontal e verticalmente */
+  z-index: 3;
 }
 
 .profile-photo {
@@ -77,24 +85,4 @@ nav ul li a {
 .skills {
   font-size: 18px;
   color: #555555; /* Cinza escuro */
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-  .landscape-image {
-    height: 300px; /* Ajusta a altura da imagem para telas menores */
-  }
-
-  .profile-photo {
-    width: 120px;
-    height: 120px;
-  }
-
-  .name {
-    font-size: 24px;
-  }
-
-  .skills {
-    font-size: 16px;
-  }
 }
