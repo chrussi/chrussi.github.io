@@ -8,7 +8,7 @@ body {
 
 /* Barra superior */
 header {
-  background-color: rgba(186, 201, 205, 0.5); 
+  background-color: rgba(186, 201, 205, 0.5);
   padding: 15px 0;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@ header {
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
@@ -40,19 +40,17 @@ nav ul li a {
 .landscape-image {
   width: 100%;
   height: 400px;
-  background-image: url('/assets/images/paisagem2.jpg');
-  background-size: cover;
-  background-position: center;
-  margin-top: 10 px; /* Para não sobrepor a barra superior */
+  background: url('/assets/images/paisagem2.jpg') center/cover;
+  margin-top: 10px; /* Corrigido espaço extra */
 }
 
 /* Seção de perfil */
 .profile-section {
   text-align: center;
   padding: 30px;
-  background-color: rgba(192, 206, 208, 0.5); /* Cinza translúcido */
-  margin-top: 0px; /* Subindo para sobrepor à foto */
-  position: relative
+  background-color: rgba(192, 206, 208, 0.5);
+  margin-top: 0;
+  position: relative;
 }
 
 .profile-photo {
@@ -65,33 +63,35 @@ nav ul li a {
 .name {
   font-size: 30px;
   color: black;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .skills {
   font-size: 20px;
-  color: black; 
+  color: black;
 }
 
+/* Caixas de links */
 .link-box {
-    text-align: center;
-    width: 300px;
-    padding: 15px;
-    margin: 10px;
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+  width: 300px;
+  padding: 15px;
+  margin: 10px auto;
+  background-color: rgba(186, 201, 205, 0.5);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link-box a {
-    text-decoration: none;
-    color: #333;
+  text-decoration: none;
+  color: #333;
 }
 
 .link-box:hover {
-    background-color: #d6d6d6;
+  background-color: #d6d6d6;
 }
 
 /* Seção "Sobre mim" */
@@ -109,7 +109,6 @@ nav ul li a {
 
 .about-text {
   font-size: 20px;
-  color: #333333; /* Um cinza escuro */
-  line-height: 1.6; /* Para melhorar a legibilidade */
+  color: #333;
+  line-height: 1.6;
 }
-
