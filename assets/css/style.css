@@ -74,6 +74,7 @@ nav ul li a {
 }
 
 .link-box {
+    text-align: center;
     width: 300px;
     padding: 15px;
     margin: 10px;
