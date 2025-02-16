@@ -110,6 +110,10 @@ nav ul li a {
 .about-text {
   font-size: 20px;
   color: #333;
-  line-height: 1.8; /* Reduziu o espaçamento entre linhas */
-  margin-bottom: 10px; /* Reduziu o espaçamento entre parágrafos */
+  line-height: 1.6; /* Mantém boa legibilidade */
 }
+
+.about-text p {
+  margin-bottom: 5px; /* Reduz espaçamento entre parágrafos */
+}
+
