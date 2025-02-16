@@ -97,7 +97,7 @@ nav ul li a {
 /* Seção "Sobre mim" */
 .about-me {
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px 10px;
 }
 
 .about-title {
@@ -110,6 +110,6 @@ nav ul li a {
 .about-text {
   font-size: 20px;
   color: #333;
-  line-height: 1.4; /* Reduziu o espaçamento entre linhas */
+  line-height: 1.8; /* Reduziu o espaçamento entre linhas */
   margin-bottom: 10px; /* Reduziu o espaçamento entre parágrafos */
 }
