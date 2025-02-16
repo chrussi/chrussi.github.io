@@ -41,7 +41,7 @@ nav ul li a {
   width: 100%;
   height: 400px;
   background: url('/assets/images/paisagem2.jpg') center/cover;
-  margin-top: 10px; /* Corrigido espaço extra */
+  margin-top: 0px; /* Corrigido espaço extra */
 }
 
 /* Seção de perfil */
