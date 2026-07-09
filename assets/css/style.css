@@ -1,119 +1,385 @@
-/* Estilos gerais */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: white;
-  margin: 0;
-  padding: 0;
-} 
+/* =========================================================
+   Carlos Henrique Russi — estilos
+   Paleta original preservada:
+     branco (fundo), azul-acinzentado #BAC9CD / #C0CED0
+   Único acréscimo: um tom mais profundo da mesma família
+   (--accent) para hover, foco e contraste de leitura.
+   ========================================================= */
 
-/* Barra superior */
-header {
-  background-color: rgba(186, 201, 205, 0.5);
-  padding: 15px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
+:root {
+  --bg: #ffffff;
+  --surface: #f6f8f9;              /* leve variação do branco original */
+  --primary: #bac9cd;               /* cor original da barra/cards */
+  --primary-soft: rgba(186, 201, 205, 0.55);
+  --secondary: #c0ced0;             /* cor original da seção de perfil */
+  --accent: #4a6b72;                /* tom mais profundo da mesma família, novo */
+  --text: #1a1a1a;
+  --text-soft: #333333;
+  --text-muted: #5c6467;
+  --border: rgba(74, 107, 114, 0.18);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --shadow-soft: 0 10px 30px -12px rgba(26, 41, 45, 0.25);
+  --shadow-hover: 0 14px 34px -10px rgba(26, 41, 45, 0.32);
 }
 
-nav ul {
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-soft);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ---------------- Header / navegação ---------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background: var(--primary-soft);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.site-nav {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav .brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  gap: 28px;
 }
 
-nav ul li {
-  margin: 0 20px;
-}
-
-nav ul li a {
-  color: black;
+.site-nav ul li a {
+  color: var(--text);
   text-decoration: none;
-  font-weight: bold;
-}
-
-/* Espaço para a foto de paisagem */
-.landscape-image {
-  width: 100%;
-  height: 400px;
-  background: url('/assets/images/paisagem2.jpg') center/cover;
-  margin-top: 0px; /* Corrigido espaço extra */
-}
-
-/* Seção de perfil */
-.profile-section {
-  text-align: center;
-  padding: 30px;
-  background-color: rgba(192, 206, 208, 0.5);
-  margin-top: 0;
+  font-weight: 600;
+  font-size: 15px;
   position: relative;
 }
 
+.site-nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.site-nav ul li a:hover::after { width: 100%; }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 62vh;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.hero--small { height: 40vh; min-height: 260px; }
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/paisagem2.jpg') center/cover;
+  transform: scale(1.02);
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 41, 45, 0.05) 0%,
+    rgba(26, 41, 45, 0.15) 55%,
+    var(--bg) 100%
+  );
+}
+
+/* ---------------- Cartão de perfil ---------------- */
+.profile-section {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: -110px;
+  position: relative;
+  z-index: 5;
+}
+
+.profile-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 40px 44px 34px;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  animation: rise 0.7s ease both;
+}
+
 .profile-photo {
-  width: 150px;
-  height: 150px;
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 20px;
+  border: 4px solid var(--secondary);
+  margin-bottom: 18px;
+  box-shadow: var(--shadow-soft);
 }
 
 .name {
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 30px;
-  color: black;
-  margin-bottom: 0;
+  color: var(--text);
+  margin: 0 0 8px;
 }
 
-.skills {
-  font-size: 20px;
-  color: black;
+.tagline {
+  font-size: 17px;
+  color: var(--text-soft);
+  margin: 0 0 14px;
+  line-height: 1.5;
 }
 
-/* Caixas de links */
-.link-box {
-  width: 300px;
-  padding: 15px;
-  margin: 10px auto;
-  background-color: rgba(186, 201, 205, 0.5);
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
+.contact-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0 0 22px;
+}
+
+.contact-line a { text-decoration: none; }
+.contact-line a:hover { color: var(--accent); }
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: var(--primary-soft);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14.5px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.link-pill:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ---------------- Divisor de contorno topográfico ---------------- */
+.contour-divider {
+  width: 100%;
+  line-height: 0;
+  color: var(--secondary);
+  margin-top: 46px;
+}
+
+.contour-divider svg { width: 100%; height: 44px; display: block; }
+.contour-divider path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  opacity: 0.7;
+}
+
+/* ---------------- Seção "Sobre mim" ---------------- */
+.about-me {
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 10px 20px 70px;
 }
 
-.link-box a {
-  text-decoration: none;
-  color: #333;
-}
-
-.link-box:hover {
-  background-color: #d6d6d6;
-}
-
-/* Seção "Sobre mim" */
-.about-me {
+.about-card {
+  max-width: 720px;
+  width: 100%;
   text-align: center;
-  padding: 20px 10px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px;
 }
 
 .about-title {
-  font-size: 25px;
-  font-weight: bold;
-  color: black;
-  margin-bottom: 15px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--text);
+  margin: 0 0 22px;
 }
 
 .about-text {
-  font-size: 20px;
-  color: #333;
-  line-height: 1.6; /* Mantém boa legibilidade */
+  font-size: 17.5px;
+  color: var(--text-soft);
+  line-height: 1.75;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 36px;
 }
 
-.about-text p {
-  margin-bottom: 5px; /* Reduz espaçamento entre parágrafos */
+.about-text p { margin: 0 0 14px; }
+.about-text p:last-child { margin-bottom: 0; }
+
+/* ---------------- Posts ---------------- */
+.posts-section {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 70px;
+  margin-top: -70px;
+  position: relative;
+  z-index: 5;
 }
 
+.posts-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 40px 44px;
+  max-width: 640px;
+  width: 100%;
+  text-align: center;
+}
+
+.posts-list {
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+  text-align: left;
+  border-top: 1px solid var(--border);
+}
+
+.posts-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.posts-list a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.posts-list a:hover { color: var(--accent); }
+
+.post-date {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.back-link:hover { text-decoration: underline; }
+
+/* ---------------- Footer ---------------- */
+.site-footer {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.footer-content p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.footer-content a { text-decoration: none; }
+.footer-content a:hover { color: var(--accent); }
+
+/* ---------------- Animações ---------------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .profile-card { animation: none; }
+}
+
+/* ---------------- Responsivo ---------------- */
+@media (max-width: 640px) {
+  .hero { height: 46vh; min-height: 260px; }
+  .profile-section { margin-top: -80px; }
+  .profile-card { padding: 30px 22px 26px; }
+  .name { font-size: 25px; }
+  .about-text { padding: 24px 22px; }
+  .posts-section { margin-top: -50px; }
+  .posts-card { padding: 30px 22px; }
+  .site-nav ul { gap: 16px; }
+}

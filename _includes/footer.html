@@ -1,1 +1,14 @@
-
+<footer class="site-footer">
+  <div class="contour-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+      <path d="M0,30 C150,60 250,0 400,25 C550,50 650,10 800,30 C950,50 1050,10 1200,30" />
+    </svg>
+  </div>
+  <div class="footer-content">
+    <p>&copy; <span id="year">2025</span> Carlos Henrique Russi</p>
+    <p><a href="mailto:carloshrussi@outlook.com">carloshrussi@outlook.com</a></p>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>

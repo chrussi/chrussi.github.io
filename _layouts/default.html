@@ -4,52 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carlos Henrique Russi</title>
-  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <meta name="description" content="Biólogo, consultor ambiental, mestre em ecologia.">
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
 
-  <!-- Barra de navegação superior -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      </ul>
-    </nav>
-  </header>
+  {% include header.html %}
 
-  <!-- Imagem de paisagem -->
-  <div class="landscape-image"></div>
+  <main>
+    <!-- Hero: imagem de paisagem original com sobreposição -->
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-scrim"></div>
+    </section>
 
-  <!-- Seção de perfil -->
-  <div class="profile-section">
-    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Minha Foto" class="profile-photo">
-    <div class="name">Carlos Henrique Russi</div>
-    <div class="skills">
-      <p>Biólogo, consultor ambiental e estatístico, mestre em ecologia</p>
-      <p>E-mail para contato: carloshrussi@outlook.com</p>
+    <!-- Cartão de perfil flutuando sobre o hero -->
+    <section class="profile-section">
+      <div class="profile-card">
+        <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Foto de Carlos Henrique Russi" class="profile-photo">
+        <h1 class="name">Carlos Henrique Russi</h1>
+        <p class="tagline">Biólogo, consultor ambiental e estatístico, mestre em ecologia</p>
+        <p class="contact-line">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Zm1.8.4 6.72 5.28a1 1 0 0 0 1.24 0L19.46 6.9M4.2 17.1l5.6-5.2M19.8 17.1l-5.6-5.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="mailto:carloshrussi@outlook.com">carloshrussi@outlook.com</a>
+        </p>
+
+        <div class="link-row">
+          <a class="link-pill" href="https://lattes.cnpq.br/4415289189450820" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 13h8M8 16.5h8M8 9.5h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            Currículo Lattes
+          </a>
+          <a class="link-pill" href="https://scholar.google.com/citations?user=El1zdVcAAAAJ&hl=pt-BR" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 2 9.5l10 5.5 8.2-4.5V16h1.3V9.5L12 4Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 12.2V16c0 1.8 2.7 3.3 6 3.3s6-1.5 6-3.3v-3.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            Google Acadêmico
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="contour-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,30 C150,0 250,60 400,35 C550,10 650,50 800,30 C950,10 1050,50 1200,30" />
+      </svg>
     </div>
 
-    <!-- Links para redes -->
-    <div class="link-box">
-      <a href="https://lattes.cnpq.br/4415289189450820" target="_blank">Currículo Lattes</a>
-    </div>
-    <div class="link-box">
-      <a href="https://scholar.google.com/citations?user=El1zdVcAAAAJ&hl=pt-BR" target="_blank">Google Acadêmico</a>
-    </div>
-  </div>
+    <!-- Seção "Sobre mim" -->
+    <section class="about-me">
+      <div class="about-card">
+        <p class="eyebrow">Sobre mim</p>
+        <h2 class="about-title">Ecologia, dados e conservação</h2>
+        <div class="about-text">
+          <p>Olá! Sou biólogo (CRBIO 118999), mestre (UFSC) e aluno de doutorado (INPA) em ecologia.</p>
+          <p>Minha pesquisa e atuação profissional estão focadas na interseção entre a ecologia e a conservação da biodiversidade. Particularmente, me interesso em como conceitos da teoria ecológica podem nos ajudar a compreender melhor as interações entre espécies e seu ambiente, e como esse conhecimento pode ser aplicado para mitigar os impactos humanos sobre a natureza.</p>
+          <p>Além disso, tenho especial interesse e experiência em métodos analíticos que permitam integrar avanços na teoria ecológica com dados de campo coletados em diferentes contextos, gerando assim lições úteis em ecologia e conservação.</p>
+          <p>Estou aberto a colaborações e parcerias em projetos que explorem esses temas. Se tiver interesse, sinta-se à vontade para entrar em contato!</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- Seção "Sobre mim" -->
-  <div class="about-me">
-    <div class="about-title">Sobre mim</div>
-    <div class="about-text">
-	<p>Olá! Sou biólogo (CRBIO 118999), mestre (UFSC) e aluno de doutorado (INPA) em ecologia.</p>
-	<p>Minha pesquisa e atuação profissional estão focadas na interseção entre a ecologia e a conservação da biodiversidade. Particularmente, me interesso em como 	conceitos da teoria ecológica podem nos ajudar a compreender melhor as interações entre espécies e seu ambiente, e como esse conhecimento pode ser aplicado 	para mitigar os impactos humanos sobre a natureza.</p>
-	<p>Além disso, tenho especial interesse e experiência em métodos analíticos que permitam integrar avanços na teoria ecológica com dados de campo coletados 	em diferentes contextos, gerando assim lições úteis em ecologia e conservação.</p>
-	<p>Estou aberto a colaborações e parcerias em projetos que explorem esses temas. Se tiver interesse, sinta-se a vontade para entrar em contato!</p>   
- </div>
-  </div>
+  {% include footer.html %}
 
 </body>
 </html>
- 
